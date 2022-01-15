@@ -7,7 +7,9 @@ import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -24,6 +26,10 @@ public class Movie {
     private Double score;
     private Integer count;
     private String image;
+
+    @OneToMany(mappedBy = "id.movie")
+    @ToString.Exclude
+    private Set<Score> scores = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {
