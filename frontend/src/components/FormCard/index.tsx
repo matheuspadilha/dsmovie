@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Movie } from "types/movie";
-import "./styles.css";
 import axios from "axios";
+import { Movie } from "types/movie";
 import { BASE_URL } from "utils/requests";
+import "./styles.css";
 
 type Props = {
   movieId: String;
